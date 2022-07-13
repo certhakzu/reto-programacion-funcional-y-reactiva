@@ -17,4 +17,8 @@ public class Email {
     public Boolean getEnviado() {
         return enviado;
     }
+
+    public void cambiarEstadoEnviado() {
+        this.enviado = !this.enviado;
+    }
 }

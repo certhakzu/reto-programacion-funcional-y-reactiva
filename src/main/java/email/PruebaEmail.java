@@ -55,10 +55,13 @@ public class PruebaEmail {
     }
 
     // Extra Correos enviados
-    public List<String> correosEnviados(List<Email> listaDeCorreos){
+    public List<Email> correosEnviados(List<Email> listaDeCorreos){
         return listaDeCorreos.stream()
                 .filter(Email::getEnviado)
-                .map(Email::getCuerpo)
+                .map(email -> {
+                    email.cambiarEstadoEnviado();;
+                    return email;
+                })
                 .collect(Collectors.toList());
     }
 
