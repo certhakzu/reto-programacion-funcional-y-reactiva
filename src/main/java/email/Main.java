@@ -1,7 +1,5 @@
-import email.Datos;import email.Email;
-import email.PruebaEmail;
+package email;
 
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,9 +13,13 @@ public class Main {
                 + pruebaEmail.correosConFormatoCorrecto(collect.getListaDeCorreos()));
         System.out.println(">>> Cantidad de Correos Validos y sin repetir:\n"
                 + pruebaEmail.contarCorreosDiferentes(collect.getListaDeCorreos()));
-        System.out.println(">>> Cantidad de Correos con Dominios Gmail, Hotmail, Outloook:\n"
+        System.out.println(">>> Cantidad de Correos con Dominios Gmail, Hotmail, Outlook:\n"
                 + pruebaEmail.contarCorreosGmailHotmailOutlook(collect.getListaDeCorreos()));
         System.out.println(">>> Correos Enviados: "
                 + pruebaEmail.correosEnviados(collect.getListaDeCorreos()));
+
+        System.out.println(">>> Correos Enviados");
+        pruebaEmail.correosEnviados(collect.getListaDeCorreos())
+                .forEach(email -> System.out.println(email.getCuerpo() + " ESTADO: " + email.getEnviado()));
     }
 }

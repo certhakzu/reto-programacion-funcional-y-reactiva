@@ -31,8 +31,5 @@ public class PruebaDerivadaIntegral {
             default:
                 System.out.println("OPCION NO VALIDA XD");
             }
-
-
-
     }
 }
